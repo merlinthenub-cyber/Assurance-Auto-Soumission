@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soumission d’assurance – Auto / Habitation / Condo</title>
+  <meta name="description" content="Formulaire de soumission pour assurances auto, habitation et condo au Québec.">
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --accent-2:#1d4ed8;
+      --text:#f3f4f6;
+      --text-2:#e5e7eb;
+      --border:#1f2937;
+      --ok:#10b981;
+      --warn:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#0b1224, #0f172a);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.45;
+    }
+    header{
+      padding:32px 20px 16px;
+      text-align:center;
+    }
+    header h1{
+      margin:0 0 8px;
+      font-size: clamp(22px, 3.3vw, 34px);
+      letter-spacing: .3px;
+    }
+    header p{margin:0;color:var(--muted)}
+    .wrap{
+      max-width: 980px;
+      margin: 20px auto 64px;
+      padding: 0 16px;
+    }
+    .card{
+      background: linear-gradient(180deg,#0e1629, #0c1323);
+      border:1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .card header{
+      text-align:left;
+      padding:20px;
+      border-bottom:1px solid var(--border);
+    }
+    form{padding:20px}
+    fieldset{
+      border:1px solid var(--border);
+      padding:16px;
+      border-radius:12px;
+      margin: 0 0 18px;
+    }
+    legend{
+      padding:0 8px;
+      color: var(--text-2);
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: repeat(12,1fr);
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .col-12{grid-column: span 12}
+    .col-6{grid-column: span 12}
+    .col-4{grid-column: span 12}
+    .col-3{grid-column: span 12}
+    .col-2{grid-column: span 12}
+    .col-7{grid-column: span 12}
+    @media(min-width:700px){
+      .col-6{grid-column: span 6}
+      .col-4{grid-column: span 4}
+      .col-3{grid-column: span 3}
+      .col-2{grid-column: span 2}
+      .col-7{grid-column: span 7}
+    }
+    label{
+      display:block;
+      font-size:14px;
+      color: var(--text-2);
+      margin: 2px 0 6px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:#0b1120;
+      color:var(--text);
+      outline:none;
+    }
+    #modele{min-width:100%}
+    textarea{min-height:100px; resize:vertical}
+    .help{font-size:12px;color:var(--muted); margin-top:6px}
+    .checks{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:8px 14px;
+    }
+    .checks label{display:flex; gap:8px; align-items:center; margin:0}
+    .checks input{transform: translateY(1px)}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; font-size:13px;
+      background:#0b1120; border:1px solid var(--border); color:var(--text-2);
+    }
+    .veh-card{
+      border:1px dashed var(--border);
+      border-radius:12px;
+      padding:12px;
+      margin-top:10px;
+      position:relative;
+      background: rgba(255,255,255,0.02);
+    }
+    .veh-head{
+      display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;
+      color:var(--text-2); font-weight:600;
+    }
+    .veh-actions button{
+      background:#0b1120; color:var(--text-2); border:1px solid var(--border);
+      padding:6px 8px; border-radius:10px; cursor:pointer;
+    }
+    .two-col{
+      display:flex; gap:30px; flex-wrap:wrap;
+    }
+    .two-col > div{flex:1 1 280px;}
+    .actions{
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; margin-top:8px
+    }
+    button{
+      border:0; cursor:pointer;
+      padding:12px 16px; border-radius:12px; font-weight:600;
+      background:linear-gradient(180deg,var(--accent), var(--accent-2));
+      color:white; letter-spacing:.2px;
+    }
+    button.secondary{
+      background:#0b1120; color:var(--text-2); border:1px solid var(--border);
+    }
+    .footer-note{color:var(--muted); font-size:12px; margin-top:8px}
+    .consent{
+      display:flex; gap:10px; align-items:flex-start; margin-top:8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soumission d’assurance – Auto • Habitation • Condo</h1>
+    <p>Courtier en assurance de dommages – Québec</p>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <span class="pill">🚗 Auto</span>
+        <span class="pill">🏠 Habitation</span>
+        <span class="pill">🏢 Condo</span>
+      </header>
+
+      <form id="soumission" action="#" method="post" novalidate>
+        <!-- INFORMATIONS PERSO -->
+        <fieldset>
+          <legend>Informations personnelles</legend>
+          <div class="row">
+            <div class="col-6">
+              <label for="prenom">Prénom *</label>
+              <input id="prenom" name="prenom" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="col-6">
+              <label for="nom">Nom de famille *</label>
+              <input id="nom" name="nom" type="text" autocomplete="family-name" required>
+            </div>
+
+            <div class="col-6">
+              <label for="date_naissance">Date de naissance *</label>
+              <input id="date_naissance" name="date_naissance" type="date" required>
+            </div>
+            <div class="col-6">
+              <label for="email">Courriel *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="col-6">
+              <label for="tel">Téléphone *</label>
+              <input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="Ex. 514-555-1234" required>
+            </div>
+            <div class="col-6">
+              <label for="etat_civil">État civil</label>
+              <select id="etat_civil" name="etat_civil">
+                <option value="">— Sélectionner —</option>
+                <option value="celibataire">Célibataire</option>
+                <option value="conjoint_de_fait">Conjoint de fait</option>
+                <option value="marie">Marié</option>
+                <option value="etudiant">Étudiant</option>
+                <option value="divorce">Divorcé (Séparé)</option>
+                <option value="veuf">Veuf (Veuve)</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label for="adresse">Adresse complète</label>
+              <input id="adresse" name="adresse" type="text" autocomplete="street-address" placeholder="Numéro, rue, ville, code postal">
+            </div>
+            <div class="col-6">
+              <label for="statut_residence">Statut de résidence</label>
+              <select id="statut_residence" name="statut_residence">
+                <option value="">— Sélectionner —</option>
+                <option value="proprietaire">Propriétaire</option>
+                <option value="locataire">Locataire</option>
+              </select>
+            </div>
+          </div>
+          <div class="help">* Champs obligatoires</div>
+        </fieldset>
+
+        <!-- VÉHICULE -->
+        <fieldset>
+          <legend>Véhicule (si soumission auto)</legend>
+          <div class="row">
+            <div class="col-12">
+              <label><input id="multi_veh" type="checkbox"> J'ai plus d'un véhicule</label>
+              <div class="help">Cochez pour ajouter d'autres véhicules (jusqu'à 4 au total).</div>
+            </div>
+          </div>
+
+          <div id="vehiculesContainer">
+            <!-- Vehicle block 1 -->
+            <div class="veh-card" data-index="0">
+              <div class="veh-head">
+                <span>Véhicule #1</span>
+                <div class="veh-actions" style="display:none">
+                  <button type="button" class="remove-veh">Retirer</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <label for="veh_0_annee">Année</label>
+                  <input id="veh_0_annee" name="vehicules[0][annee]" type="number" min="1980" max="2030" step="1" placeholder="2025">
+                </div>
+                <div class="col-3">
+                  <label for="veh_0_marque">Marque</label>
+                  <input id="veh_0_marque" name="vehicules[0][marque]" type="text" placeholder="Toyota">
+                </div>
+                <div class="col-7">
+                  <label for="veh_0_modele">Modèle</label>
+                  <input id="veh_0_modele" name="vehicules[0][modele]" type="text" placeholder="Corolla">
+                </div>
+                <div class="col-12">
+                  <label for="veh_0_vin">NIV (VIN)</label>
+                  <input id="veh_0_vin" name="vehicules[0][vin]" type="text" placeholder="17 caractères">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions" id="veh_actions" style="display:none; justify-content:flex-start;">
+            <button type="button" class="secondary" id="addVeh">Ajouter un véhicule</button>
+          </div>
+
+          <!-- Hidden template -->
+          <template id="veh_template">
+            <div class="veh-card" data-index="{i}">
+              <div class="veh-head">
+                <span>Véhicule #{n}</span>
+                <div class="veh-actions">
+                  <button type="button" class="remove-veh">Retirer</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <label for="veh_{i}_annee">Année</label>
+                  <input id="veh_{i}_annee" name="vehicules[{i}][annee]" type="number" min="1980" max="2030" step="1" placeholder="2025">
+                </div>
+                <div class="col-3">
+                  <label for="veh_{i}_marque">Marque</label>
+                  <input id="veh_{i}_marque" name="vehicules[{i}][marque]" type="text" placeholder="Toyota">
+                </div>
+                <div class="col-7">
+                  <label for="veh_{i}_modele">Modèle</label>
+                  <input id="veh_{i}_modele" name="vehicules[{i}][modele]" type="text" placeholder="Corolla">
+                </div>
+                <div class="col-12">
+                  <label for="veh_{i}_vin">NIV (VIN)</label>
+                  <input id="veh_{i}_vin" name="vehicules[{i}][vin]" type="text" placeholder="17 caractères">
+                </div>
+              </div>
+            </div>
+          </template>
+        </fieldset>
+
+        <!-- RESPONSABILITÉ CIVILE -->
+        <fieldset>
+          <legend>Responsabilité civile</legend>
+          <div class="row">
+            <div class="col-6">
+              <label for="responsabilite_civile">Montant de couverture *</label>
+              <select id="responsabilite_civile" name="responsabilite_civile" required>
+                <option value="">— Sélectionner —</option>
+                <option value="1M">1 000 000 $</option>
+                <option value="2M">2 000 000 $</option>
+              </select>
+            </div>
+          </div>
+          <div class="help">Choisissez entre <strong>1M $</strong> ou <strong>2M $</strong> de responsabilité civile.</div>
+        </fieldset>
+
+        <!-- COUVERTURE SOUHAITÉE -->
+        <fieldset>
+          <legend>Couverture souhaitée</legend>
+          <div class="checks">
+            <label><input id="cov_resp_uni" type="checkbox" name="couverture[]" value="responsabilite_uniquement"> Responsabilité civile uniquement</label>
+            <label><input id="cov_collision" type="checkbox" name="couverture[]" value="collision"> Collision</label>
+            <label><input id="cov_trsc" type="checkbox" name="couverture[]" value="tous_risques_sauf_collision"> Tous risques sauf collision</label>
+            <label><input id="cov_tr" type="checkbox" name="couverture[]" value="tous_risques"> Tous risques</label>
+          </div>
+          <div class="help">« Tous risques » inclut une garantie complète : <strong>collision, feu, vol et vandalisme</strong>. « Tous risques sauf collision » couvre uniquement le <strong>feu, vol et vandalisme</strong>.</div>
+        </fieldset>
+
+        <!-- FRANCHISES -->
+        <fieldset>
+          <legend>Franchises</legend>
+          <div class="two-col">
+            <div>
+              <label for="franchise_collision">Franchise – Collision</label>
+              <select id="franchise_collision" name="franchise_collision" disabled>
+                <option value="">— Sélectionner —</option>
+                <option value="0">$0</option>
+<option value="250">$250</option>
+<option value="500">$500</option>
+<option value="750">$750</option>
+<option value="1000">$1000</option>
+<option value="1250">$1250</option>
+<option value="1500">$1500</option>
+<option value="1750">$1750</option>
+<option value="2000">$2000</option>
+              </select>
+            </div>
+            <div>
+              <label for="franchise_trsc">Franchise – Tous risques sauf collision</label>
+              <select id="franchise_trsc" name="franchise_trsc" disabled>
+                <option value="">— Sélectionner —</option>
+                <option value="0">$0</option>
+<option value="250">$250</option>
+<option value="500">$500</option>
+<option value="750">$750</option>
+<option value="1000">$1000</option>
+<option value="1250">$1250</option>
+<option value="1500">$1500</option>
+<option value="1750">$1750</option>
+<option value="2000">$2000</option>
+              </select>
+            </div>
+          </div>
+          <div class="help">Choisissez une franchise de <strong>0 $ à 2 000 $</strong> par paliers de <strong>250 $</strong>.</div>
+        </fieldset>
+
+        <!-- ÉCHÉANCE -->
+        <fieldset>
+          <legend>Renouvellement</legend>
+          <div class="row">
+            <div class="col-12">
+              <label for="date_echeance"><strong>Quelle est la date d’échéance de ton contrat d’assurance actuel ? *</strong></label>
+              <input id="date_echeance" name="date_echeance" type="date" required>
+              <div class="help">Exemple : si ton renouvellement est le 31 mars 2026, indique cette date. Nous te contacterons durant <span id="moisEcheance">le mois du renouvellement</span>.</div>
+            </div>
+            <div class="col-6">
+              <label for="produit">Produit concerné *</label>
+              <select id="produit" name="produit" required>
+                <option value="">— Sélectionner —</option>
+                <option value="auto">Auto</option>
+                <option value="habitation">Habitation</option>
+                <option value="condo">Condo</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- COMMENTAIRES -->
+        <fieldset>
+          <legend>Commentaires</legend>
+          <textarea id="commentaires" name="commentaires" placeholder="Précisions utiles (conducteurs, hypothèque, valeur des biens, etc.)"></textarea>
+        </fieldset>
+
+        <!-- CONSENTEMENT -->
+        <fieldset>
+          <legend>Consentement</legend>
+          <label class="consent">
+            <input type="checkbox" id="consentement" name="consentement" required>
+            <span>En envoyant ce formulaire, vous consentez à être contacté pour une soumission d’assurance.</span>
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="reset" class="secondary">Effacer</button>
+          <button type="submit">Envoyer la demande</button>
+        </div>
+        <div class="footer-note">Aucune information sur le permis de conduire n’est demandée dans ce formulaire.</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Affichage du mois d'échéance
+    const dateInput = document.getElementById('date_echeance');
+    const moisSpan = document.getElementById('moisEcheance');
+    const mois = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+    function updateMois(){
+      if(!dateInput.value){ if(moisSpan) moisSpan.textContent = "le mois du renouvellement"; return; }
+      const d = new Date(dateInput.value + "T12:00:00");
+      if(isNaN(d)) { if(moisSpan) moisSpan.textContent = "le mois du renouvellement"; return; }
+      if(moisSpan) moisSpan.textContent = mois[d.getMonth()] + " " + d.getFullYear();
+    }
+    if(dateInput){ dateInput.addEventListener('change', updateMois); updateMois(); }
+
+    // ------------------ Multi-véhicules ------------------
+    const multiVeh = document.getElementById('multi_veh');
+    const vehContainer = document.getElementById('vehiculesContainer');
+    const btnAddVeh = document.getElementById('addVeh');
+    const vehActions = document.getElementById('veh_actions');
+    const templ = document.getElementById('veh_template').innerHTML;
+
+    function currentVehCount() { return vehContainer.querySelectorAll('.veh-card').length; }
+    function refreshVehHeaders() {
+      vehContainer.querySelectorAll('.veh-card').forEach((card, idx) => {
+        const head = card.querySelector('.veh-head span');
+        head.textContent = "Véhicule #" + (idx + 1);
+      });
+    }
+    function enableMultiVeh(enabled) {
+      vehActions.style.display = enabled ? 'flex' : 'none';
+      vehContainer.querySelectorAll('.veh-card').forEach((card, idx) => {
+        const actions = card.querySelector('.veh-actions');
+        actions.style.display = enabled && idx > 0 ? 'block' : 'none';
+      });
+    }
+    function addVehicle() {
+      const maxVeh = 4;
+      let count = currentVehCount();
+      if (count >= maxVeh) { alert("Maximum 4 véhicules."); return; }
+      const i = count;
+      const html = templ.replaceAll("{i}", i).replaceAll("{n}", i+1);
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html.trim();
+      const card = wrapper.firstElementChild;
+      vehContainer.appendChild(card);
+      attachRemoveHandler(card);
+      refreshVehHeaders();
+      enableMultiVeh(true);
+    }
+    function attachRemoveHandler(card) {
+      const btn = card.querySelector('.remove-veh');
+      btn.addEventListener('click', () => {
+        card.remove();
+        refreshVehHeaders();
+        enableMultiVeh(multiVeh.checked);
+      });
+    }
+    attachRemoveHandler(vehContainer.querySelector('.veh-card'));
+    multiVeh.addEventListener('change', (e) => enableMultiVeh(e.target.checked));
+    btnAddVeh.addEventListener('click', addVehicle);
+
+    // ------------------ Couvertures & franchises ------------------
+    const covTR = document.getElementById('cov_tr');
+    const covColl = document.getElementById('cov_collision');
+    const covTRSC = document.getElementById('cov_trsc');
+    const covRespUni = document.getElementById('cov_resp_uni');
+    const otherCovers = [covColl, covTRSC];
+    const allCovers = [covColl, covTRSC, covTR];
+
+    // Franchises
+    const selFrColl = document.getElementById('franchise_collision');
+    const selFrTRSC = document.getElementById('franchise_trsc');
+
+    function applyCoverageExclusivity() {
+      // TR exclusif vs autres
+      if (covTR.checked) {
+        otherCovers.forEach(cb => { cb.checked = false; cb.disabled = true; });
+      } else {
+        otherCovers.forEach(cb => cb.disabled = false);
+      }
+      const anyOther = otherCovers.some(cb => cb.checked);
+      covTR.disabled = anyOther;
+
+      // Resp. civile uniquement exclusif vs tout le reste
+      if (covRespUni.checked) {
+        allCovers.forEach(cb => { cb.checked = false; cb.disabled = true; });
+      } else {
+        allCovers.forEach(cb => cb.disabled = false);
+      }
+    }
+
+    function updateFranchiseEnablement() {
+      if (covRespUni.checked) {
+        selFrColl.disabled = true; selFrColl.value = "";
+        selFrTRSC.disabled = true; selFrTRSC.value = "";
+        return;
+      }
+      if (covTR.checked) {
+        selFrColl.disabled = false;
+        selFrTRSC.disabled = false;
+      } else {
+        selFrColl.disabled = !covColl.checked;
+        selFrTRSC.disabled = !covTRSC.checked;
+        if (selFrColl.disabled) selFrColl.value = "";
+        if (selFrTRSC.disabled) selFrTRSC.value = "";
+      }
+    }
+
+    function handleCoverageChange() {
+      applyCoverageExclusivity();
+      updateFranchiseEnablement();
+    }
+    [covTR, covColl, covTRSC, covRespUni].forEach(cb => cb.addEventListener('change', handleCoverageChange));
+    handleCoverageChange();
+
+    // Validation minimale + consentement natif (required)
+    document.getElementById('soumission').addEventListener('submit', function(e){
+      if(!this.checkValidity()){
+        e.preventDefault();
+        alert("Merci de compléter les champs obligatoires et de cocher le consentement.");
+        return false;
+      }
+      if(this.getAttribute('action') === '#'){
+        e.preventDefault();
+        alert("Formulaire prêt ✅\nConfigurez l’URL d’envoi (action=…) vers votre service (ex. Formspree ou Google Apps Script) pour recevoir les soumissions.");
+        return false;
+      }
+    });
+  </script>
+</body>
+</html>
