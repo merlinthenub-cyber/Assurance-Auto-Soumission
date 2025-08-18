@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Soumission d’assurance – Auto / Habitation / Condo&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Formulaire de soumission pour assurances auto, habitation et condo au Québec."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg:#0f172a;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card:#111827;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted:#6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent:#2563eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent-2:#1d4ed8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text:#f3f4f6;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text-2:#e5e7eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--border:#1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--ok:#10b981;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--warn:#f59e0b;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg,#0b1224, #0f172a);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height:1.45;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:32px 20px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header h1{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0 0 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(22px, 3.3vw, 34px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: .3px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header p{margin:0;color:var(--muted)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.wrap{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 980px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 20px auto 64px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg,#0e1629, #0c1323);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 30px rgba(0,0,0,.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card header{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align:left;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>form{padding:20px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>fieldset{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>legend{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:0 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight:600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing:.2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(12,1fr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap:12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom:12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-12{grid-column: span 12}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-6{grid-column: span 12}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-4{grid-column: span 12}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.col-3{grid-column: span 12}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(min-width:700px){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.col-6{grid-column: span 6}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.col-4{grid-column: span 4}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.col-3{grid-column: span 3}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>label{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 2px 0 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="text"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="email"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="tel"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="date"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input[type="number"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>select,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>textarea{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width:100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:12px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius:10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:#0b1120;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>textarea{min-height:100px; resize:vertical}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.help{font-size:12px;color:var(--muted); margin-top:6px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.checks{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(2, minmax(0,1fr));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap:8px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.checks label{display:flex; gap:8px; align-items:center; margin:0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.checks input{transform: translateY(1px)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.pill{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; align-items:center; gap:8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:8px 12px; border-radius:999px; font-size:13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:#0b1120; border:1px solid var(--border); color:var(--text-2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.actions{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; margin-top:8px</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border:0; cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:12px 16px; border-radius:12px; font-weight:600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:linear-gradient(180deg,var(--accent), var(--accent-2));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:white; letter-spacing:.2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button.secondary{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:#0b1120; color:var(--text-2); border:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-note{color:var(--muted); font-size:12px; margin-top:8px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.bad{color:#f87171}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ok{color:var(--ok)}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Soumission d’assurance – Auto • Habitation • Condo&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Courtier en assurance de dommages – Québec&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="pill"&gt;🚗 Auto&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="pill"&gt;🏠 Habitation&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="pill"&gt;🏢 Condo&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;form id="soumission" action="#" method="post" novalidate&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- INFORMATIONS PERSO --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;fieldset&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;legend&gt;Informations personnelles&lt;/legend&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="nom"&gt;Nom complet *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="nom" name="nom" type="text" autocomplete="name" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="date_naissance"&gt;Date de naissance *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="date_naissance" name="date_naissance" type="date" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="email"&gt;Courriel *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="email" name="email" type="email" autocomplete="email" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="tel"&gt;Téléphone *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="tel" name="tel" type="tel" autocomplete="tel" placeholder="Ex. 514-555-1234" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="adresse"&gt;Adresse complète&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="adresse" name="adresse" type="text" autocomplete="street-address" placeholder="Numéro, rue, ville, code postal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="help"&gt;* Champs obligatoires&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/fieldset&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- VEHICULE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;fieldset&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;legend&gt;Véhicule (si soumission auto)&lt;/legend&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="annee"&gt;Année&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="annee" name="annee" type="number" min="1980" max="2026" step="1" placeholder="2022"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="marque"&gt;Marque&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="marque" name="marque" type="text" placeholder="Ex. Toyota"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="modele"&gt;Modèle&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="modele" name="modele" type="text" placeholder="Ex. Corolla SE"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="vin"&gt;NIV (VIN)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="vin" name="vin" type="text" placeholder="17 caractères"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/fieldset&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- UTILISATION / ANTÉCÉDENTS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;fieldset&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;legend&gt;Utilisation &amp; antécédents&lt;/legend&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="usage"&gt;Usage du véhicule&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;select id="usage" name="usage"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value=""&gt;— Sélectionner —&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="prive"&gt;Personnel – déplacements privés&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="travail"&gt;Domicile-travail&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="affaires"&gt;Affaires&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="livraison"&gt;Livraison / Uber / Taxi&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="stationnement"&gt;Stationnement principal&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;select id="stationnement" name="stationnement"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value=""&gt;— Sélectionner —&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="rue"&gt;Rue&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="allee"&gt;Allée/entrée&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="garage"&gt;Garage&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="interieur"&gt;Intérieur sécurisé&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="sinistres"&gt;Sinistres (dernières 6 années)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="sinistres" name="sinistres" type="text" placeholder="Ex. 1 réclamation 2023, non responsable"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="infractions"&gt;Infractions au code de la route&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="infractions" name="infractions" type="text" placeholder="Ex. 1 excès de vitesse 2024"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/fieldset&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- COUVERTURE SOUHAITÉE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;fieldset&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;legend&gt;Couverture souhaitée&lt;/legend&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="checks"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;&lt;input type="checkbox" name="couverture[]" value="responsabilite"&gt; Responsabilité civile&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;&lt;input type="checkbox" name="couverture[]" value="collision"&gt; Collision&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;&lt;input type="checkbox" name="couverture[]" value="tous_risques_sauf_collision"&gt; Tous risques sauf collision&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="help"&gt;« Tous risques sauf collision » remplace les options bris de vitres / vandalisme.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/fieldset&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ÉCHÉANCE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;fieldset&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;legend&gt;Renouvellement&lt;/legend&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="date_echeance"&gt;Date d’échéance actuelle *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input id="date_echeance" name="date_echeance" type="date" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="help"&gt;Nous te contacterons durant le &lt;span id="moisEcheance"&gt;mois du renouvellement&lt;/span&gt;.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="col-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label for="produit"&gt;Produit&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;select id="produit" name="produit"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value=""&gt;— Sélectionner —&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="auto"&gt;Auto&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="habitation"&gt;Habitation&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;option value="condo"&gt;Condo&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/fieldset&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- COMS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;fieldset&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;legend&gt;Commentaires&lt;/legend&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;textarea id="commentaires" name="commentaires" placeholder="Précisions utiles (conducteurs, hypothèque, valeur des biens, etc.)"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/fieldset&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button type="reset" class="secondary"&gt;Effacer&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button type="submit"&gt;Envoyer la demande&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-note"&gt;En envoyant ce formulaire, vous consentez à être contacté pour une soumission d’assurance. Aucune information sur le permis de conduire n’est demandée dans ce formulaire.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Mise à jour dynamique de l'indication de mois d'échéance</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dateInput = document.getElementById('date_echeance');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const moisSpan = document.getElementById('moisEcheance');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const mois = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateMois(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!dateInput.value){ moisSpan.textContent = "mois du renouvellement"; return; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const d = new Date(dateInput.value + "T12:00:00");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(isNaN(d)) { moisSpan.textContent = "mois du renouvellement"; return; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>moisSpan.textContent = mois[d.getMonth()] + " " + d.getFullYear();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dateInput.addEventListener('change', updateMois);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>updateMois();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Validation minimale côté client + placeholder d'envoi</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('soumission').addEventListener('submit', function(e){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(!this.checkValidity()){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Merci de compléter les champs obligatoires marqués d’un *.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(this.getAttribute('action') === '#'){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Formulaire prêt ✅\\nConfigurez l’URL d’envoi (action=…) vers votre service (ex. Formspree ou Google Apps Script) pour recevoir les soumissions.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
